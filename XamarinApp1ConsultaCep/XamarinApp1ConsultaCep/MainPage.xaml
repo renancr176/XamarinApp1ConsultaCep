@@ -4,11 +4,31 @@
              xmlns:local="clr-namespace:XamarinApp1ConsultaCep"
              x:Class="XamarinApp1ConsultaCep.MainPage">
 
-    <StackLayout>
+    <StackLayout BackgroundColor="#FFBF00" Padding="30" Spacing="30">
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <Image Source="Assets/logo.png"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"></Image>
+
+        <Entry x:Name="inputCep"
+            Placeholder="Informe o CEP"
+            PlaceholderColor="#FFBF00"
+            BackgroundColor="#FFFFFF"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            MaxLength="8"></Entry>
+
+        <Button x:Name="btnConsultar"
+            Text="Consultar"
+            TextColor="#FFFFFF"
+            BackgroundColor="#00416B"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"></Button>
+
+        <Label x:Name="labelResultado"
+            Text=""
+            HorizontalOptions="Center"
+            VerticalOptions="Center"></Label>
     </StackLayout>
 
 </ContentPage>
