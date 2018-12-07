@@ -50,6 +50,8 @@ namespace XamarinApp1ConsultaCep
             else
             {
                 DisplayAlert("Erro CEP inválido","Informe um CEP válido", "OK");
+                inputCep.Text = "";
+                inputCep.Focus();
             }
         }
     }
