@@ -14,7 +14,12 @@ namespace XamarinApp1ConsultaCep.Services
             var urlConsultaCep = string.Format(_urlConsultaCep, cep);
             var wc = new WebClient();
             var jsonString = wc.DownloadString(urlConsultaCep);
-            return JsonConvert.DeserializeObject<EnderecoModel>(jsonString);
+            var endereco = JsonConvert.DeserializeObject<EnderecoModel>(jsonString);
+            if (endereco.cep == null)
+            {
+                return null;
+            }
+            return endereco;
         }
     }
 }

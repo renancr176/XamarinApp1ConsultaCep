@@ -46,9 +46,16 @@ namespace XamarinApp1ConsultaCep
                 try
                 {
                     var endereco = ViaCepService.GetEnderecoViaCep(inputCep.Text);
-                    var textoEndereco = string.Format("Logradouro: {0}\nBairro: {1}\nCidade: {2}\nUF: {3}",
-                        endereco.logradouro, endereco.bairro, endereco.localidade, endereco.uf);
-                    labelResultado.Text = textoEndereco;
+                    if (endereco != null)
+                    {
+                        var textoEndereco = string.Format("Logradouro: {0}\nBairro: {1}\nCidade: {2}\nUF: {3}",
+                            endereco.logradouro, endereco.bairro, endereco.localidade, endereco.uf);
+                        labelResultado.Text = textoEndereco;
+                    }
+                    else
+                    {
+                        DisplayAlert("Erro", "Endereço não encontrado.", "OK");
+                    }
                 }
                 catch (Exception e)
                 {
